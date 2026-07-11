@@ -1,4 +1,4 @@
-import resumePdf from '../assets/Bharatlal_Resume.pdf'
+// import resumePdf from '../assets/Bharatlal_Resume.pdf'
 import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
 import animatedlanding from '../assets/animated-app.png'
@@ -19,8 +19,8 @@ export const profile = {
   location: 'Gurgaon , Haryana, India',
   availability: 'Open to opportunities',
   interests: ['Open Source', 'UI/UX Design'],
-  resumeFileName: 'resumePdf',
-  resumePath: '../assets/Bharatlal_Resume.pdf',
+  resumeFileName: '/Bharatlal_Resume.pdf',
+  resumePath: 'Bharatlal_Resume.pdf',
 }
 
 export const socialLinks = [
