@@ -105,6 +105,44 @@ export const projects = [
   },
 ]
 
+export const certificates = [
+  {
+    title: 'Certificate of Experience ',
+    issuer: 'Coding Ninjas',
+    date: '2024',
+    link: 'https://drive.google.com/file/d/1CQJbtffI46-AFDANV95fjRGWJAr5SmRW/view?usp=drivesdk',
+    image: null,
+  },
+  {
+    title: 'Front End Web Developer ',
+    issuer: 'Coding Ninjas',
+    date: '2023',
+    link: 'https://certificate.codingninjas.com/view/a0da78100530d010',
+    image: null,
+  },
+  {
+    title: 'Backend web Development in Node.js',
+    issuer: 'Coding Ninjas',
+    date: '2023',
+    link: 'https://certificate.codingninjas.com/view/1bf0731e9c922eee',
+    image: null,
+  },
+  {
+    title: 'The fundamental of Digital Marketing ',
+    issuer: 'Google',
+    date: '2023',
+    link: 'https://drive.google.com/file/d/1Hfotn5toRGyLpjrarVY2YBi9iMY9SBYN/view?usp=drive_link',
+    image: null,
+  },
+  {
+    title: 'Data Structure  ',
+    issuer: 'Coding Ninjas',
+    date: '2023',
+    link: 'https://certificate.codingninjas.com/verify/82518866c43a1605',
+    image: null,
+  },
+]
+
 export const experience = [
   {
     role: 'Frontend Developer',
