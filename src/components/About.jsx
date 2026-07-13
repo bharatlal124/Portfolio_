@@ -1,7 +1,7 @@
 import { MapPin, Briefcase, Heart } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { about, profile } from '../data/portfolioData'
-import profileImage from '../assets/bharat-image.png'
+import profileImage from '../assets/bharat.jpg'
 
 const highlightIcons = {
   Location: MapPin,
