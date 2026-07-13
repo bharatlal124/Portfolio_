@@ -182,6 +182,6 @@ export const experience = [
 ]
 
 export const footer = {
-  copyright: `© ${new Date().getFullYear()}  bharat lal. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()}  bharatlal. All rights reserved.`,
   credit: 'Built with React & Tailwind CSS',
 }
