@@ -15,14 +15,14 @@ function Certificate() {
           {certificates.map((cert) => (
             <article
               key={cert.title}
-              className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface-card transition-transform hover:-translate-y-1"
+              className="group card-base flex flex-col overflow-hidden rounded-xl"
             >
               <div className="flex h-40 items-center justify-center overflow-hidden bg-surface-elevated">
                 {cert.image ? (
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="h-full w-full object-contain p-6"
+                    className="h-full w-full object-cover p-0 "
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center px-6 text-center">

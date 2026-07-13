@@ -7,14 +7,14 @@ function Skills() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Skills"
-          subtitle="Technologies and tools I work with"
+          subtitle="Tech Stack"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
             <div
               key={group.category}
-              className="rounded-xl border border-border bg-surface-card p-6 transition-transform hover:-translate-y-1"
+              className="rounded-xl card-base p-6"
             >
               <h3 className="mb-4 text-lg font-semibold text-white">
                 {group.category}

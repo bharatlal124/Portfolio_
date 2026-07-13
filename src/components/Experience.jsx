@@ -18,7 +18,7 @@ function Experience() {
               <div key={index} className="relative sm:pl-12">
                 <div className="absolute left-0 top-1.5 hidden h-3 w-3 rounded-full border-2 border-accent bg-surface sm:left-[13px] sm:block" />
 
-                <div className="rounded-xl border border-border bg-surface-card p-6">
+                <div className="rounded-xl card-base p-6">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-lg font-semibold text-white">

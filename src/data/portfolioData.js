@@ -3,17 +3,27 @@ import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
 import animatedlanding from '../assets/animated-app.png'
 
+// Certificate images imports
+import backend from '../assets/backend-certificate.png'
+import frontend from '../assets/frontend-certificate.png'
+import DSA from '../assets/DSA-certificate.png'
+import experiencecertificates from '../assets/Experience-certificate.png'
+import DM from '../assets/DM-certificate.png'
+
+
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Certificates', href: '#certificates' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const profile = {
   name: 'Bharat Lal',
-  title: 'Frontend Developer',
+  title: 'Frontend Engineer',
   tagline: 'I build accessible, high-performance web applications with React and Next.js that deliver exceptional user experiences.',
   email: 'bharatlalsohna@gmail.com',
   location: 'Gurgaon , Haryana, India',
@@ -36,7 +46,7 @@ export const about = {
     'I enjoy creating intuitive user interfaces, improving application performance, and solving real-world problems with modern frontend technologies. I thrive in collaborative environments and am always eager to learn new technologies.',
   ],
   highlights: [
-    { label: 'Location', value: 'Gurgaon , Haryana, India' },
+    { label: 'Location', value: 'Gurgaon, India' },
     { label: 'Availability', value: 'Immediate Joiner' },
     { label: 'Interests', value: 'Open Source ' },
   ],
@@ -111,35 +121,35 @@ export const certificates = [
     issuer: 'Coding Ninjas',
     date: '2024',
     link: 'https://drive.google.com/file/d/1CQJbtffI46-AFDANV95fjRGWJAr5SmRW/view?usp=drivesdk',
-    image: null,
+    image: experiencecertificates,
   },
   {
     title: 'Front End Web Developer ',
     issuer: 'Coding Ninjas',
     date: '2023',
     link: 'https://certificate.codingninjas.com/view/a0da78100530d010',
-    image: null,
+    image: frontend,
   },
   {
     title: 'Backend web Development in Node.js',
     issuer: 'Coding Ninjas',
     date: '2023',
     link: 'https://certificate.codingninjas.com/view/1bf0731e9c922eee',
-    image: null,
+    image: backend,
   },
   {
     title: 'The fundamental of Digital Marketing ',
     issuer: 'Google',
     date: '2023',
     link: 'https://drive.google.com/file/d/1Hfotn5toRGyLpjrarVY2YBi9iMY9SBYN/view?usp=drive_link',
-    image: null,
+    image: DM,
   },
   {
     title: 'Data Structure  ',
     issuer: 'Coding Ninjas',
     date: '2023',
     link: 'https://certificate.codingninjas.com/verify/82518866c43a1605',
-    image: null,
+    image: DSA,
   },
 ]
 

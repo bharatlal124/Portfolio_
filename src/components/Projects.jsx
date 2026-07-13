@@ -9,14 +9,14 @@ function Projects() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Projects"
-          subtitle="Things I've built recently"
+          subtitle="Featured Work"
         />
 
         <div className="grid gap-6 sm:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface-card transition-transform hover:-translate-y-1"
+              className="group card-base flex flex-col overflow-hidden rounded-xl"
             >
               <div className="flex h-44 items-center justify-center overflow-hidden bg-surface-elevated">
   {project.image ? (
@@ -52,12 +52,12 @@ function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-5 flex items-center gap-4">
+                <div className="mt-5 flex items-center gap-6">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent"
+                    className="inline-flex items-center gap-1.5 text-md text-muted transition-colors hover:text-accent"
                   >
                     <GitHubIcon size={16} />
                     Code
@@ -66,7 +66,7 @@ function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-accent"
+                    className="inline-flex items-center gap-1.5 text-md text-muted transition-colors hover:text-accent"
                   >
                     <ExternalLink size={16} />
                     Live Demo
