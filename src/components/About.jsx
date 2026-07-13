@@ -45,7 +45,7 @@ function About() {
                 return (
                   <div
                     key={item.label}
-                    className="rounded-xl card-base p-4"
+                    className="rounded-xl   p-4"
                   >
                     <Icon size={20} className="mb-2 text-accent" />
                     <p className="text-xs font-medium uppercase tracking-wide text-muted">

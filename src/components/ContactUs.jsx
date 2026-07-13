@@ -84,38 +84,34 @@ function ContactUs() {
               </div>
 
                 {/* Social icon */}
-            <div className="rounded-3xl border border-border bg-surface px-5 py-4">
-  {/* <p className="mb-4 text-sm text-muted">Connect with me</p> */}
+                <div className="rounded-3xl border border-border bg-surface px-5 py-4">
+                    {/* <p className="mb-4 text-sm text-muted">Connect with me</p> */}
 
-  <div className="space-y-3">
-    {socialLinks
-      .filter((link) => ['github', 'linkedin'].includes(link.icon))
-      .map((link) => {
-        const Icon = socialIconMap[link.icon]
+                        <div className="space-y-3">
+                        {socialLinks
+                        .filter((link) => ['github', 'linkedin'].includes(link.icon))
+                        .map((link) => {
+                            const Icon = socialIconMap[link.icon]
 
-        return (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-xl border border-border px-4 py-3 transition-all hover:border-accent hover:bg-surface-card"
-          >
-            <Icon size={20} className="text-accent" />
-            <span className="text-white">{link.label}</span>
-          </a>
-        )
-      })}
-  </div>
-</div>
-
-
+                            return (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 rounded-xl border border-border px-4 py-3 transition-all hover:border-accent hover:bg-surface-card"
+                            >
+                                <Icon size={20} className="text-accent" />
+                                <span className="text-white">{link.label}</span>
+                            </a>
+                            )
+                        })}
+                    </div>
+                </div>
 
             </div>
 
-            
-
-          </div>
+        </div>
 
           <form
             ref={formRef}
