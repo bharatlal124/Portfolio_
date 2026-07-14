@@ -1,42 +1,46 @@
-import { ExternalLink, FolderOpen } from 'lucide-react'
+import { useState } from 'react'
+import { ExternalLink, FolderOpen, ChevronDown, ChevronUp } from 'lucide-react'
 import { GitHubIcon } from './SocialIcons'
 import SectionHeading from './SectionHeading'
 import { projects } from '../data/portfolioData'
 
 function Projects() {
+  const [showAll, setShowAll] = useState(false)
+  const visibleProjects = showAll ? projects : projects.slice(0, 4)
+  const hasMoreProjects = projects.length > 4
+
   return (
     <section id="projects" className="py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Projects"
-          subtitle="Featured Work"
-        />
+        <SectionHeading title="Projects" subtitle="Featured Work" />
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((project) => (
+          {visibleProjects.map((project, index) => (
             <article
               key={project.title}
-              className="group card-base flex flex-col overflow-hidden rounded-xl"
+              className="group card-base flex flex-col overflow-hidden rounded-xl transition-all duration-500 ease-out"
+              style={{
+                animation: showAll ? 'fadeSlideDown 0.45s ease-out forwards' : undefined,
+                animationDelay: showAll ? `${index * 80}ms` : undefined,
+              }}
             >
               <div className="flex h-44 items-center justify-center overflow-hidden bg-surface-elevated">
-  {project.image ? (
-    <img
-      src={project.image}
-      alt={project.title}
-      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-    />
-  ) : (
-    <FolderOpen
-      size={48}
-      className="text-border transition-colors group-hover:text-accent"
-    />
-  )}
-</div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <FolderOpen
+                    size={48}
+                    className="text-border transition-colors group-hover:text-accent"
+                  />
+                )}
+              </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-white">
-                  {project.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {project.description}
                 </p>
@@ -76,6 +80,20 @@ function Projects() {
             </article>
           ))}
         </div>
+
+        {hasMoreProjects && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              aria-expanded={showAll}
+              className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-surface-card/80 px-6 py-3 text-sm font-medium text-accent shadow-[0_0_0_1px_rgba(99,102,241,0.15)] backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-surface-elevated hover:text-white"
+            >
+              {showAll ? 'View Less' : 'View More'}
+              {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
