@@ -2,6 +2,7 @@
 import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
 import animatedlanding from '../assets/animated-app.png'
+import NextJSBlog from '../assets/nextjs-blog.png'
 
 // Certificate images imports
 import backend from '../assets/backend-certificate.png'
@@ -94,6 +95,15 @@ export const projects = [
     liveUrl: 'https://royal-diamond-park.netlify.app/',
     githubUrl: 'https://github.com/bharatlal124/animate_web_with_GSAP',
     image: animatedlanding,
+  },
+  {
+    title: 'NextJS Blog Application',
+    description:
+      'A modern blogging platform built with Next.js, TypeScript, Tailwind CSS, and Sanity CMS featuring dynamic content management, SEO optimization, responsive design, and a clean user experience.',
+    tech: ['NextJS', 'TypeScript', 'Tailwind CSS', 'React', 'Sanity CMS', 'Next SEO', 'Next Sitemap'],
+    liveUrl: 'https://bharat-blogs.netlify.app/',
+    githubUrl: 'https://github.com/bharatlal124/Next-blog-s',
+    image: NextJSBlog,
   },
   {
     title: 'Hospital API',
