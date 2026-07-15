@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Mail, MapPin, Send } from 'lucide-react'
+import { Mail, MapPin, Send, ArrowUpRight } from 'lucide-react'
 import { sendForm } from '@emailjs/browser'
 import SectionHeading from './SectionHeading'
 import { profile, socialLinks } from '../data/portfolioData'
@@ -60,50 +60,73 @@ function ContactUs() {
               I’m always open to new opportunities and collaborations. Send a message to discuss projects, freelance work, or just say hello.
             </p>
 
-            <div className="mt-8 space-y-6">
-              <div className="flex items-center gap-3 rounded-3xl border border-border bg-surface px-5 py-4">
-                <MapPin size={20} className="text-accent" />
-                <div>
+            <div className="mt-8 space-y-4">
+              {/* Location */}
+              <div className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
+                  <MapPin size={22} className="text-accent" />
+                </div>
+
+                <div className="flex-1">
                   <p className="text-sm text-muted">Location</p>
-                  <p className="text-on-surface">{profile.location}</p>
+                  <p className="font-medium text-on-surface">{profile.location}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-3xl border border-border bg-surface px-5 py-4">
-                <Mail size={20} className="text-accent" />
-                <div>
+              {/* Email */}
+              <a
+                href={`mailto:${profile.email}`}
+                className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
+                  <Mail size={22} className="text-accent" />
+                </div>
+
+                <div className="flex-1">
                   <p className="text-sm text-muted">Email</p>
-                  <a
-                    href={`mailto:${profile.email}`}
-                    className="text-on-surface transition-colors hover:text-accent"
-                  >
+                  <p className="font-medium text-on-surface group-hover:text-accent transition-colors">
                     {profile.email}
-                  </a>
+                  </p>
                 </div>
-              </div>
 
-              <div className="rounded-3xl border border-border bg-surface px-5 py-4">
-                <div className="space-y-3">
-                  {socialLinks
-                    .filter((link) => ['github', 'linkedin'].includes(link.icon))
-                    .map((link) => {
-                      const Icon = socialIconMap[link.icon]
+                <ArrowUpRight
+                  size={18}
+                  className="text-muted transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </a>
 
-                      return (
-                        <a
-                          key={link.label}
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 rounded-xl border border-border px-4 py-3 transition-all hover:border-accent hover:bg-surface-card"
-                        >
-                          <Icon size={20} className="text-accent" />
-                          <span className="text-on-surface">{link.label}</span>
-                        </a>
-                      )
-                    })}
-                </div>
-              </div>
+              {/* Social Links */}
+              {socialLinks
+                .filter((link) => ['github', 'linkedin'].includes(link.icon))
+                .map((link) => {
+                  const Icon = socialIconMap[link.icon]
+
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
+                        <Icon size={22} className="text-accent" />
+                      </div>
+
+                      <div className="flex-1">
+                        <p className="text-sm text-muted">{link.label}</p>
+                        <p className="font-medium text-on-surface group-hover:text-accent transition-colors">
+                          {link.href}
+                        </p>
+                      </div>
+
+                      <ArrowUpRight
+                        size={18}
+                        className="text-muted transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
+                      />
+                    </a>
+                  )
+                })}
             </div>
           </div>
 
