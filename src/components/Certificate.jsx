@@ -4,7 +4,7 @@ import { certificates } from '../data/portfolioData'
 
 function Certificate() {
   return (
-    <section id="certificates" className="py-16 lg:py-24">
+    <section id="certificates" className="bg-surface-elevated py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Certificates"
@@ -27,15 +27,15 @@ function Certificate() {
                 ) : (
                   <div className="flex h-full w-full items-center justify-center px-6 text-center">
                     <div className="text-sm text-muted">
-                      <div className="font-semibold text-white">{cert.issuer}</div>
-                      <div className="mt-1 text-xs">{cert.title}</div>
+                      <div className="font-semibold text-on-surface">{cert.issuer}</div>
+                      <div className="mt-1 text-xs text-muted">{cert.title}</div>
                     </div>
                   </div>
                 )}
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
+                <h3 className="text-lg font-semibold text-on-surface">{cert.title}</h3>
                 <p className="mt-2 text-sm text-muted">{cert.issuer} • {cert.date}</p>
 
                 <div className="mt-4 flex items-center justify-between">

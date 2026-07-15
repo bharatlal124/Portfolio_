@@ -1,7 +1,7 @@
 function SectionHeading({ title, subtitle }) {
   return (
     <div className="mb-12 text-center">
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <h2 className="text-3xl font-bold tracking-tight text-on-surface sm:text-4xl">
         {title}
       </h2>
       {subtitle && (

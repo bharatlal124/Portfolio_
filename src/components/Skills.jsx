@@ -16,7 +16,7 @@ function Skills() {
               key={group.category}
               className="rounded-xl card-base p-6"
             >
-              <h3 className="mb-4 text-lg font-semibold text-white">
+              <h3 className="mb-4 text-lg font-semibold text-on-surface">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">

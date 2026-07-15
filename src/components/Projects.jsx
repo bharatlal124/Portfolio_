@@ -40,7 +40,7 @@ function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                <h3 className="text-lg font-semibold text-on-surface">{project.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {project.description}
                 </p>
@@ -87,7 +87,7 @@ function Projects() {
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
               aria-expanded={showAll}
-              className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-surface-card/80 px-6 py-3 text-sm font-medium text-accent shadow-[0_0_0_1px_rgba(99,102,241,0.15)] backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-surface-elevated hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-surface-card/80 px-6 py-3 text-sm font-medium text-accent shadow-[0_0_0_1px_rgba(99,102,241,0.15)] backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-surface-elevated hover:text-on-surface"
             >
               {showAll ? 'View Less' : 'View More'}
               {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}

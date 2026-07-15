@@ -18,7 +18,7 @@ function Home() {
           Hello, I&apos;m
         </p>
 
-        <h1 className="animate-fade-in-up-delay text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="animate-fade-in-up-delay text-4xl font-bold tracking-tight text-on-surface sm:text-5xl md:text-6xl lg:text-7xl">
           {profile.name}
         </h1>
 
@@ -41,7 +41,7 @@ function Home() {
           </a>
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-semibold text-on-surface transition-colors hover:border-accent hover:text-accent"
           >
             View Projects
             <ArrowDown size={18} />

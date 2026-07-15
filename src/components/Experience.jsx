@@ -3,7 +3,7 @@ import { experience } from '../data/portfolioData'
 
 function Experience() {
   return (
-    <section id="experience" className="bg-surface-elevated py-16 lg:py-24">
+    <section id="experience" className=" py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Experience"
@@ -16,12 +16,12 @@ function Experience() {
           <div className="space-y-10">
             {experience.map((job, index) => (
               <div key={index} className="relative sm:pl-12">
-                <div className="absolute left-0 top-1.5 hidden h-3 w-3 rounded-full border-2 border-accent bg-surface sm:left-[13px] sm:block" />
+                <div className="absolute left-0 top-0.1 hidden h-3 w-3 rounded-full border-2 border-accent bg-surface sm:left-[10px] sm:block" />
 
                 <div className="rounded-xl card-base p-6">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">
+                      <h3 className="text-lg font-semibold text-on-surface">
                         {job.role}
                       </h3>
                       <p className="text-sm font-medium text-accent">
