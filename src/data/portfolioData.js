@@ -1,7 +1,7 @@
 // import resumePdf from '../assets/Bharatlal_Resume.pdf'
 import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
-import animatedlanding from '../assets/animated-app.png'
+import animatedapp from '../assets/animated-app2.png'
 import NextJSBlog from '../assets/nextjs-blog.png'
 
 // Certificate images imports
@@ -94,7 +94,7 @@ export const projects = [
     tech: ['HTML', 'JavaScript', 'Tailwind CSS', 'GSAP', 'AOS'],
     liveUrl: 'https://royal-diamond-park.netlify.app/',
     githubUrl: 'https://github.com/bharatlal124/animate_web_with_GSAP',
-    image: animatedlanding,
+    image: animatedapp,
   },
   {
     title: 'NextJS Blog Application',
