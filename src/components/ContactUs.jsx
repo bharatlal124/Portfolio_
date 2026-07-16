@@ -67,7 +67,7 @@ function ContactUs() {
                   <MapPin size={22} className="text-accent" />
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted">Location</p>
                   <p className="font-medium text-on-surface">{profile.location}</p>
                 </div>
@@ -82,9 +82,9 @@ function ContactUs() {
                   <Mail size={22} className="text-accent" />
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted">Email</p>
-                  <p className="font-medium text-on-surface group-hover:text-accent transition-colors">
+                  <p className="font-medium text-on-surface group-hover:text-accent transition-colors break-all">
                     {profile.email}
                   </p>
                 </div>
@@ -113,9 +113,9 @@ function ContactUs() {
                         <Icon size={22} className="text-accent" />
                       </div>
 
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <p className="text-sm text-muted">{link.label}</p>
-                        <p className="font-medium text-on-surface group-hover:text-accent transition-colors">
+                        <p className="font-medium text-on-surface group-hover:text-accent transition-colors break-all">
                           {link.href}
                         </p>
                       </div>
