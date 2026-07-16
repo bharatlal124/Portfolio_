@@ -106,7 +106,7 @@ function Navbar({ theme, toggleTheme }) {
       </nav>
 
       {isOpen && (
-        <div className="border-b border-border bg-surface-elevated md:hidden">
+        <div className="md:hidden border-b border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-black/5">
           <ul className="flex flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
