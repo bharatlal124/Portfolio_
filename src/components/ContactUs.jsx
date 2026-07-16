@@ -57,7 +57,7 @@ function ContactUs() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr]">
           <div className="rounded-xl border border-border bg-surface-card p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted">
-              I’m always open to new opportunities and collaborations. Send a message to discuss projects, freelance work, or just say hello.
+              I'm open to new opportunities, freelance projects, and collaborations. Feel free to reach out.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -116,7 +116,7 @@ function ContactUs() {
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-muted">{link.label}</p>
                         <p className="font-medium text-on-surface group-hover:text-accent transition-colors break-all">
-                          {link.href}
+                          {link.shortlink}
                         </p>
                       </div>
 

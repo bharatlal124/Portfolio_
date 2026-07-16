@@ -27,7 +27,7 @@ export const profile = {
   title: 'Frontend Engineer',
   tagline: 'I build accessible, high-performance web applications with React and Next.js that deliver exceptional user experiences.',
   email: 'bharatlalsohna@gmail.com',
-  location: 'Gurgaon , Haryana, India',
+  location: 'Gurgaon ,  Haryana,  India',
   availability: 'Open to opportunities',
   interests: ['Open Source', 'UI/UX Design'],
   resumeFileName: '/Bharatlal_Resume.pdf',
@@ -35,8 +35,8 @@ export const profile = {
 }
 
 export const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/bharatlal124', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bharatlal0124/', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/bharatlal124', icon: 'github' ,shortlink: '@bharatlal124' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bharatlal0124/', icon: 'linkedin', shortlink:'@bharatlal0124' },
   { label: 'Email', href: 'mailto:bharatlalsohna@gmail.com', icon: 'mail' },
 ]
 
