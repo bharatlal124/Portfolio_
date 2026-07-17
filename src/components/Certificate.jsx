@@ -1,10 +1,19 @@
 import { ExternalLink } from 'lucide-react'
+import { motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import { certificates } from '../data/portfolioData'
+import { fadeInUp, staggerContainer } from '../utils/motionVariants'
 
 function Certificate() {
   return (
-    <section id="certificates" className="bg-surface-elevated py-16 lg:py-24">
+    <motion.section
+      id="certificates"
+      className="bg-surface-elevated py-16 lg:py-24"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Certificates"
@@ -13,16 +22,20 @@ function Certificate() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {certificates.map((cert) => (
-            <article
+            <motion.article
               key={cert.title}
               className="group card-base flex flex-col overflow-hidden rounded-xl"
+              variants={fadeInUp}
+              
+              whileHover={{ y: -5 }}
+              transition={{ type: 'spring', stiffness: 180, damping: 14 }}
             >
               <div className="flex h-40 items-center justify-center overflow-hidden bg-surface-elevated">
                 {cert.image ? (
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="h-full w-full object-cover p-0 "
+                    className="h-full w-full object-cover p-0"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center px-6 text-center">
@@ -39,7 +52,8 @@ function Certificate() {
                 <p className="mt-2 text-sm text-muted">{cert.issuer} • {cert.date}</p>
 
                 <div className="mt-4 flex items-center justify-between">
-                  <a
+                  <motion.a
+                    whileHover={{ x: 4 }}
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -47,14 +61,14 @@ function Certificate() {
                   >
                     View Certificate
                     <ExternalLink size={16} />
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

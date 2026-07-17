@@ -1,9 +1,17 @@
+import { motion } from 'framer-motion'
 import { navLinks, socialLinks, footer } from '../data/portfolioData'
 import { socialIconMap } from '../utils/socialIconMap'
+import { fadeInUp } from '../utils/motionVariants'
 
 function Footer() {
   return (
-    <footer className="bg-surface-elevated border-t border-border py-10">
+    <motion.footer
+      className="bg-surface-elevated border-t border-border py-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm text-muted">{footer.copyright}</p>
@@ -25,8 +33,9 @@ function Footer() {
             {socialLinks.map((link) => {
               const Icon = socialIconMap[link.icon]
               return (
-                <a
+                <motion.a
                   key={link.label}
+                  whileHover={{ y: -2 }}
                   href={link.href}
                   target={link.icon !== 'mail' ? '_blank' : undefined}
                   rel={link.icon !== 'mail' ? 'noopener noreferrer' : undefined}
@@ -34,7 +43,7 @@ function Footer() {
                   className="text-muted transition-colors hover:text-accent"
                 >
                   <Icon size={18} />
-                </a>
+                </motion.a>
               )
             })}
           </div>
@@ -44,7 +53,7 @@ function Footer() {
           {footer.credit}
         </p>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

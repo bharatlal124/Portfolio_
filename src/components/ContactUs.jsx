@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react'
 import { Mail, MapPin, Send, ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { sendForm } from '@emailjs/browser'
 import SectionHeading from './SectionHeading'
 import { profile, socialLinks } from '../data/portfolioData'
 import { socialIconMap } from '../utils/socialIconMap'
+import { fadeInUp, staggerContainer } from '../utils/motionVariants'
 
 function ContactUs() {
   const formRef = useRef(null)
@@ -50,19 +52,28 @@ function ContactUs() {
   }
 
   return (
-    <section id="contact" className="py-16 lg:py-24">
+    <motion.section
+      id="contact"
+      className="py-16 lg:py-24"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Contact" subtitle="Let’s build something great together" />
 
         <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr]">
-          <div className="rounded-xl border border-border bg-surface-card p-8 shadow-card">
+          <motion.div variants={fadeInUp} className="rounded-xl border border-border bg-surface-card p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted">
               I'm open to new opportunities, freelance projects, and collaborations. Feel free to reach out.
             </p>
 
             <div className="mt-8 space-y-4">
-              {/* Location */}
-              <div className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg">
+              <motion.div
+                whileHover={{ y: -3 }}
+                className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
                   <MapPin size={22} className="text-accent" />
                 </div>
@@ -71,12 +82,12 @@ function ContactUs() {
                   <p className="text-sm text-muted">Location</p>
                   <p className="font-medium text-on-surface">{profile.location}</p>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Email */}
-              <a
+              <motion.a
+                whileHover={{ y: -3 }}
                 href={`mailto:${profile.email}`}
-                className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
+                className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
                   <Mail size={22} className="text-accent" />
@@ -93,21 +104,21 @@ function ContactUs() {
                   size={18}
                   className="text-muted transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
                 />
-              </a>
+              </motion.a>
 
-              {/* Social Links */}
               {socialLinks
                 .filter((link) => ['github', 'linkedin'].includes(link.icon))
                 .map((link) => {
                   const Icon = socialIconMap[link.icon]
 
                   return (
-                    <a
+                    <motion.a
                       key={link.label}
+                      whileHover={{ y: -3 }}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
+                      className="group flex items-center gap-4 rounded-3xl border border-border bg-surface px-5 py-4 transition-all duration-300 hover:border-accent/40 hover:bg-surface-card hover:shadow-lg"
                     >
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-soft">
                         <Icon size={22} className="text-accent" />
@@ -124,15 +135,16 @@ function ContactUs() {
                         size={18}
                         className="text-muted transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
                       />
-                    </a>
+                    </motion.a>
                   )
                 })}
             </div>
-          </div>
+          </motion.div>
 
-          <form
+          <motion.form
             ref={formRef}
             onSubmit={handleSubmit}
+            variants={fadeInUp}
             className="space-y-4 rounded-xl border border-border bg-surface-card p-8 shadow-card"
           >
             <input type="hidden" name="to_email" value={profile.email} />
@@ -180,18 +192,20 @@ function ContactUs() {
               </p>
             ) : null}
 
-            <button
+            <motion.button
               type="submit"
               disabled={isSending}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-accent/20 transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Send size={16} />
               {isSending ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

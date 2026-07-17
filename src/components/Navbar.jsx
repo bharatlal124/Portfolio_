@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { navLinks, profile } from '../data/portfolioData'
+import { fadeInUp } from '../utils/motionVariants'
 
 const sectionIds = navLinks.map((link) => link.href.slice(1))
 
@@ -44,7 +46,10 @@ function Navbar({ theme, toggleTheme }) {
   }
 
   return (
-    <header
+    <motion.header
+      initial="hidden"
+      animate="visible"
+      variants={fadeInUp}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? `
@@ -84,29 +89,38 @@ function Navbar({ theme, toggleTheme }) {
         </ul>
 
         <div className="flex items-center gap-3">
-          <button
+          <motion.button
             type="button"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-muted transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
             type="button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="rounded-lg p-2 text-muted transition-colors hover:bg-surface-elevated hover:text-on-surface md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </div>
       </nav>
 
       {isOpen && (
-        <div className="md:hidden border-b border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-black/5">
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="md:hidden border-b border-white/10 bg-white/5 dark:bg-white/5 backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-black/5"
+        >
           <ul className="flex flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -124,9 +138,9 @@ function Navbar({ theme, toggleTheme }) {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       )}
-    </header>
+    </motion.header>
   )
 }
 

@@ -1,12 +1,18 @@
 import { Download, ArrowDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { profile, socialLinks } from '../data/portfolioData'
 import { socialIconMap } from '../utils/socialIconMap'
+import { fadeInUp, fadeInUpDelayed, staggerContainer } from '../utils/motionVariants'
 
 function Home() {
   return (
-    <section
+    <motion.section
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden pt-16"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
@@ -14,46 +20,70 @@ function Home() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <p className="animate-fade-in-up mb-4 text-sm font-medium uppercase tracking-widest text-accent">
+        <motion.p
+          variants={fadeInUp}
+          className="mb-4 text-sm font-medium uppercase tracking-widest text-accent"
+        >
           Hello, I&apos;m
-        </p>
+        </motion.p>
 
-        <h1 className="animate-fade-in-up-delay text-4xl font-bold tracking-tight text-on-surface sm:text-5xl md:text-6xl lg:text-7xl">
+        <motion.h1
+          variants={fadeInUpDelayed(0.08)}
+          className="text-4xl font-bold tracking-tight text-on-surface sm:text-5xl md:text-6xl lg:text-7xl"
+        >
           {profile.name}
-        </h1>
+        </motion.h1>
 
-        <h2 className="animate-fade-in-up-delay mt-3 text-2xl font-semibold text-muted sm:text-3xl md:text-4xl">
+        <motion.h2
+          variants={fadeInUpDelayed(0.16)}
+          className="mt-3 text-2xl font-semibold text-muted sm:text-3xl md:text-4xl"
+        >
           {profile.title}
-        </h2>
+        </motion.h2>
 
-        <p className="animate-fade-in-up-delay-2 mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+        <motion.p
+          variants={fadeInUpDelayed(0.24)}
+          className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+        >
           {profile.tagline}
-        </p>
+        </motion.p>
 
-        <div className="animate-fade-in-up-delay-2 mt-10 flex flex-wrap items-center gap-4">
-          <a
+        <motion.div
+          variants={fadeInUpDelayed(0.32)}
+          className="mt-10 flex flex-wrap items-center gap-4"
+        >
+          <motion.a
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
             href={profile.resumePath}
             download={profile.resumeFileName}
             className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
           >
             <Download size={18} />
             Download Resume
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
             href="#projects"
             className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-semibold text-on-surface transition-colors hover:border-accent hover:text-accent"
           >
             View Projects
             <ArrowDown size={18} />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        <div className="animate-fade-in-up-delay-2 mt-10 flex items-center gap-4">
+        <motion.div
+          variants={fadeInUpDelayed(0.4)}
+          className="mt-10 flex items-center gap-4"
+        >
           {socialLinks.map((link) => {
             const Icon = socialIconMap[link.icon]
             return (
-              <a
+              <motion.a
                 key={link.label}
+                whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 href={link.href}
                 target={link.icon !== 'mail' ? '_blank' : undefined}
                 rel={link.icon !== 'mail' ? 'noopener noreferrer' : undefined}
@@ -61,12 +91,12 @@ function Home() {
                 className="rounded-lg border border-border p-2.5 text-muted transition-colors hover:border-accent hover:text-accent"
               >
                 <Icon size={20} />
-              </a>
+              </motion.a>
             )
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
