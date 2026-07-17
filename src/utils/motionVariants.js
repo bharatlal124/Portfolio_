@@ -28,10 +28,10 @@ export const fadeInUpDelayed = (delay = 0.18) => ({
 })
 
 export const fadeInRight = {
-  hidden: { opacity: 0, x: 40 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: { duration: 0.95, ease: 'easeOut' },
   },
 }
