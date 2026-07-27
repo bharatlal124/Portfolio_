@@ -3,6 +3,7 @@ import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
 import animatedapp from '../assets/animated-app2.png'
 import NextJSBlog from '../assets/nextjs-blog.png'
+import novacart from '../assets/Nova-cart.png'
 
 // Certificate images imports
 import backend from '../assets/backend-certificate.png'
@@ -88,13 +89,13 @@ export const projects = [
     image: ecommerce,
   },
   {
-    title: 'Animated Landing Page',
+    title: 'Nova Cart E-Commerce Application',
     description:
-      'Immersive, high-performance landing page showcasing advanced scroll-triggered animations using GSAP and Tailwind CSS.',
-    tech: ['HTML', 'JavaScript', 'Tailwind CSS', 'GSAP', 'AOS'],
-    liveUrl: 'https://royal-diamond-park.netlify.app/',
-    githubUrl: 'https://github.com/bharatlal124/animate_web_with_GSAP',
-    image: animatedapp,
+      'NovaCart is a full-stack eCommerce platform built with Next.js, featuring secure authentication, product catalog, shopping cart, wishlist, checkout, payment gateway integration, order management, responsive design, and an admin dashboard for managing products and orders.',
+    tech: ['Next JS', 'React JS', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'MongoDB'],
+    liveUrl: 'https://nova-cart-three.vercel.app/',
+    githubUrl: 'https://github.com/bharatlal124/Nova_Cart',
+    image: novacart,
   },
   {
     title: 'NextJS Blog Application',
@@ -104,6 +105,15 @@ export const projects = [
     liveUrl: 'https://bharat-blogs.netlify.app/',
     githubUrl: 'https://github.com/bharatlal124/Next-blog-s',
     image: NextJSBlog,
+  },
+  {
+    title: 'Animated Landing Page',
+    description:
+      'Immersive, high-performance landing page showcasing advanced scroll-triggered animations using GSAP and Tailwind CSS.',
+    tech: ['HTML', 'JavaScript', 'Tailwind CSS', 'GSAP', 'AOS'],
+    liveUrl: 'https://royal-diamond-park.netlify.app/',
+    githubUrl: 'https://github.com/bharatlal124/animate_web_with_GSAP',
+    image: animatedapp,
   },
   {
     title: 'Hospital API',
