@@ -6,6 +6,7 @@ import photofolio from '../assets/photofolio.png'
 import NextJSBlog from '../assets/nextjs-blog.png'
 import novacart from '../assets/Nova-cart.png'
 
+
 // Certificate images imports
 import backend from '../assets/backend-certificate.png'
 import frontend from '../assets/frontend-certificate.png'
@@ -55,6 +56,7 @@ export const about = {
   ],
 }
 
+
 export const skills = [
   {
     category: 'Frontend',
@@ -69,6 +71,7 @@ export const skills = [
     items: ['Git', 'GitHub',, 'Postman', 'Vite', 'Webpack', 'Cloudinary', 'VS Code', 'AWS', 'Figma', 'CI/CD'],
   },
 ]
+
 
 export const projects = [
   {
