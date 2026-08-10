@@ -2,6 +2,7 @@
 import chatapp from '../assets/Chat-app.png'
 import ecommerce from '../assets/ecommerce-app.png'
 import animatedapp from '../assets/animated-app2.png'
+import photofolio from '../assets/photofolio.png'
 import NextJSBlog from '../assets/nextjs-blog.png'
 import novacart from '../assets/Nova-cart.png'
 
@@ -114,6 +115,15 @@ export const projects = [
     liveUrl: 'https://royal-diamond-park.netlify.app/',
     githubUrl: 'https://github.com/bharatlal124/animate_web_with_GSAP',
     image: animatedapp,
+  },
+   {
+    title: 'Photofolio Website',
+    description:
+      'This project allows users to create albums, upload images with titles, and perform CRUD (Create, Read, Update, Delete) operations on the albums and images.',
+    tech: ['ReactJS', 'React-Dom', 'Module-CSS', 'Firebase', 'Firebase-auth'],
+    liveUrl: 'https://photo-folio-app.netlify.app/',
+    githubUrl: 'https://github.com/bharatlal124/Photo-folio-Project',
+    image: photofolio,
   },
   {
     title: 'Hospital API',
