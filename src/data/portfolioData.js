@@ -37,6 +37,7 @@ export const profile = {
   resumePath: 'Bharatlal_Resume.pdf',
 }
 
+
 export const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/bharatlal124', icon: 'github' ,shortlink: '@bharatlal124' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bharatlal0124/', icon: 'linkedin', shortlink:'@bharatlal0124' },
