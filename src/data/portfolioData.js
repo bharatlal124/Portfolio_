@@ -5,6 +5,7 @@ import animatedapp from '../assets/animated-app2.png'
 import photofolio from '../assets/photofolio.png'
 import NextJSBlog from '../assets/nextjs-blog.png'
 import novacart from '../assets/Nova-cart.png'
+import devstats from '../assets/Dev-stats.png'
 
 
 // Certificate images imports
@@ -75,24 +76,7 @@ export const skills = [
 
 
 export const projects = [
-  {
-    title: 'Real Time Chat Application',
-    description:
-      'Built a real-time chat application using React.js, Node.js, Express.js, Socket.IO, and MongoDB. Implemented authentication, image sharing with Cloudinary, typing indicators, responsive UI, and persistent chat history to deliver a seamless messaging experience.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Socket.IO', 'Cloudinary'],
-    liveUrl: 'https://bharat-chat-app.vercel.app/',
-    githubUrl: 'https://github.com/bharatlal124/Real-time-chat-app',
-    image: chatapp,
-  },
-  {
-    title: 'E-Commerce React Application',
-    description:
-      'Scalable e-commerce web application built with React and Firebase, featuring secure authentication and real-time database management.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
-    liveUrl: 'https://busy-buy-project.netlify.app/',
-    githubUrl: 'https://github.com/bharatlal124/Busy-buy-Project',
-    image: ecommerce,
-  },
+ 
   {
     title: 'Nova Cart E-Commerce Application',
     description:
@@ -102,6 +86,17 @@ export const projects = [
     githubUrl: 'https://github.com/bharatlal124/Nova_Cart',
     image: novacart,
   },
+
+  {
+    title: 'Real Time Chat Application',
+    description:
+      'Built a real-time chat application using React.js, Node.js, Express.js, Socket.IO, and MongoDB. Implemented authentication, image sharing with Cloudinary, typing indicators, responsive UI, and persistent chat history to deliver a seamless messaging experience.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Socket.IO', 'Cloudinary'],
+    liveUrl: 'https://bharat-chat-app.vercel.app/',
+    githubUrl: 'https://github.com/bharatlal124/Real-time-chat-app',
+    image: chatapp,
+  },
+
   {
     title: 'NextJS Blog Application',
     description:
@@ -111,6 +106,29 @@ export const projects = [
     githubUrl: 'https://github.com/bharatlal124/Next-blog-s',
     image: NextJSBlog,
   },
+
+  {
+    title: 'E-Commerce React Application',
+    description:
+      'Scalable e-commerce web application built with React and Firebase, featuring secure authentication and real-time database management.',
+    tech: ['React', 'Firebase', 'Tailwind CSS'],
+    liveUrl: 'https://busy-buy-project.netlify.app/',
+    githubUrl: 'https://github.com/bharatlal124/Busy-buy-Project',
+    image: ecommerce,
+  },
+
+   {
+    title: 'Dev Stats Application',
+    description:
+      'A responsive frontend dashboard combining LeetCode problem-solving stats and GitHub profile overviews with 365-day commit heatmaps.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'CSS', 'Rest API', 'Responsive'],
+    liveUrl: 'https://devstats-project.vercel.app/',
+    githubUrl: 'https://github.com/bharatlal124/Dev_Stats-Project',
+    image: devstats,
+  },
+
+  
+  
   {
     title: 'Animated Landing Page',
     description:
